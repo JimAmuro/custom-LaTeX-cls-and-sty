@@ -60,7 +60,6 @@
 
 
 %Misc
-\RequirePackage{lastpage} % Required to determine the last page for the footer
 \RequirePackage{extramarks} % Required for headers and footers
 \RequirePackage{graphicx} % Required to insert images
 \RequirePackage[space]{grffile} % deal with space in windows file path

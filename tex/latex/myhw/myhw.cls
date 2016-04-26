@@ -49,12 +49,11 @@
         \rhead{\leftmark} % Top right header
         \lfoot{\lastxmark} % Bottom left footer
         \cfoot{} % Bottom center footer
-        \rfoot{--\ \thepage/\pageref*{LastPage}\ --} % Bottom right footer
+        \rfoot{--\ \thepage\ --} % Bottom right footer
         \renewcommand\headrulewidth{0.4pt} % Size of the header rule
         \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
 %Misc
-\RequirePackage{lastpage} % Required to determine the last page for the footer
 \RequirePackage{extramarks} % Required for headers and footers
 \RequirePackage{graphicx} % Required to insert images
 \RequirePackage[space]{grffile} % deal with space in windows file path
