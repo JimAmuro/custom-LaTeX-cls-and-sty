@@ -44,12 +44,12 @@
 \RequirePackage{fancyhdr} % Required for custom headers
     % Set up the header and footer
     \pagestyle{fancy}
-        \lhead{\theauthor} % Top left header
-        \chead{\thistitle} % Top center header
+        \lhead{\emph{\theauthor}} % Top left header
+        \chead{\textbf{\thistitle}} % Top center header
         \rhead{\leftmark} % Top right header
         \lfoot{\lastxmark} % Bottom left footer
         \cfoot{} % Bottom center footer
-        \rfoot{\thepage/\pageref{LastPage}} % Bottom right footer
+        \rfoot{--\ \thepage/\pageref*{LastPage}\ --} % Bottom right footer
         \renewcommand\headrulewidth{0.4pt} % Size of the header rule
         \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
@@ -60,7 +60,6 @@
 \RequirePackage[space]{grffile} % deal with space in windows file path
 \RequirePackage{xcolor} % Required for custom colors
 \RequirePackage{booktabs} % Required for beautiful tables
-\RequirePackage{cleveref}
 \RequirePackage{siunitx}
 \RequirePackage[us]{datetime}
 \RequirePackage[shortlabels,inline]{enumitem}

@@ -41,14 +41,20 @@
 \let\oldtitle\title
 \renewcommand{\title}[1]{\oldtitle{#1}\newcommand{\thistitle}{#1}}
 
+\ctexset{section={
+  name={第,节},
+  number=\arabic{section},
+  }
+}
+
 \RequirePackage{fancyhdr} % Required for custom headers
   \pagestyle{fancy}
       % Set up the header and footer
-      \lhead{\theauthor} % Top left header
-      \chead{\thistitle} % Top center header
+      \lhead{\kaishu\theauthor} % Top left header
+      \chead{\heiti\thistitle} % Top center header
       \rhead{\leftmark} % Top right header
       \lfoot{} % Bottom left footer
-      \cfoot{\thepage} % Bottom center footer
+      \cfoot{--\ \thepage\ --} % Bottom center footer
       \rfoot{} % Bottom right footer
       % \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
@@ -60,7 +66,6 @@
 \RequirePackage[space]{grffile} % deal with space in windows file path
 \RequirePackage{xcolor} % Required for custom colors
 \RequirePackage{booktabs} % Required for beautiful tables
-\RequirePackage{cleveref}
 \RequirePackage{siunitx}
 %\RequirePackage[us]{datetime}
 \RequirePackage[shortlabels,inline]{enumitem}
@@ -71,5 +76,9 @@
             % pdftitle={Assignment}
             ]{hyperref}
 \RequirePackage{bookmark}
+
+%TITLE STYLE
+\pretitle{\begin{center}\LARGE \heiti}
+\posttitle{\par\end{center}\vskip 0.5em}
 
 \author{孙晖}

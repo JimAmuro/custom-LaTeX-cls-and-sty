@@ -43,11 +43,11 @@
 \RequirePackage{fancyhdr} % Required for custom headers
   \pagestyle{fancy}
       % Set up the header and footer
-      \lhead{\theauthor} % Top left header
-      \chead{\thistitle} % Top center header
+      \lhead{\emph{\theauthor}} % Top left header
+      \chead{\textbf{\thistitle}} % Top center header
       \rhead{\leftmark} % Top right header
       \lfoot{} % Bottom left footer
-      \cfoot{\thepage} % Bottom center footer
+      \cfoot{--\ \thepage\ --} % Bottom center footer
       \rfoot{} % Bottom right footer
       % \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
@@ -59,7 +59,6 @@
 \RequirePackage[space]{grffile} % deal with space in windows file path
 \RequirePackage{xcolor} % Required for custom colors
 \RequirePackage{booktabs} % Required for beautiful tables
-\RequirePackage{cleveref}
 \RequirePackage{siunitx}
 \RequirePackage[us]{datetime}
 \RequirePackage[shortlabels,inline]{enumitem}
@@ -76,5 +75,9 @@
 \RequirePackage[scaled]{helvet} % Helvetica, scaled 95%
 %\RequirePackage{eulervm} % Euler math, no italic, sometimes hard to distinguish from body font...
 %\RequirePackage{sourcecodepro} % TypeWriter: source code pro
+
+%TITLE STYLE
+\pretitle{\begin{center}\LARGE \bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
 
 \author{Hui Sun}
