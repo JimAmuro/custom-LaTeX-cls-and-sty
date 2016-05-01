@@ -12,10 +12,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \RequirePackage[l2tabu, orthodox]{nag}
-%Useless for XeLaTeX
-%\RequirePackage[utf8]{inputenc}
-%\RequirePackage[T1]{fontenc}
-%\RequirePackage{microtype}
 
 %Math
 \RequirePackage{mathtools}
@@ -25,6 +21,7 @@
 \RequirePackage{bm} %bold math symbols for vectors and so on
 \RequirePackage{amsthm}
 \RequirePackage{braket}
+\RequirePackage{commath}
 
 % Margin and Format
 \RequirePackage[margin=1in]{geometry}
