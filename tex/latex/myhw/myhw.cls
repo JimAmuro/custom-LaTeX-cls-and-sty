@@ -18,12 +18,13 @@
 
 %Math
 \RequirePackage{mathtools}
-    \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-    \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+  \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+  \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \RequirePackage{amssymb}
 \RequirePackage{bm} %bold math symbols for vectors and so on
 \RequirePackage{amsthm}
 \RequirePackage{braket}
+\RequirePackage{commath}
 
 % Margin and Format
 \RequirePackage[margin=1in]{geometry}
@@ -34,7 +35,7 @@
 
 \RequirePackage{titling}
 \RequirePackage{titlesec} %Define title formats
-    \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
+  \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
 \RequirePackage{titletoc}
 
 % To deal with titlesec overwriting \thetitle ... Just a varible saves it.
@@ -42,16 +43,16 @@
 \renewcommand{\title}[1]{\oldtitle{#1}\newcommand{\thistitle}{#1}}
 
 \RequirePackage{fancyhdr} % Required for custom headers
-    % Set up the header and footer
-    \pagestyle{fancy}
-        \lhead{\emph{\theauthor}} % Top left header
-        \chead{\textbf{\thistitle}} % Top center header
-        \rhead{\leftmark} % Top right header
-        \lfoot{\lastxmark} % Bottom left footer
-        \cfoot{} % Bottom center footer
-        \rfoot{--\ \thepage\ --} % Bottom right footer
-        \renewcommand\headrulewidth{0.4pt} % Size of the header rule
-        \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+  % Set up the header and footer
+  \pagestyle{fancy}
+    \lhead{\emph{\theauthor}} % Top left header
+    \chead{\textbf{\thistitle}} % Top center header
+    \rhead{\leftmark} % Top right header
+    \lfoot{\lastxmark} % Bottom left footer
+    \cfoot{} % Bottom center footer
+    \rfoot{--\ \thepage\ --} % Bottom right footer
+    \renewcommand\headrulewidth{0.4pt} % Size of the header rule
+    \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
 %Misc
 \RequirePackage{extramarks} % Required for headers and footers
@@ -62,8 +63,8 @@
 \RequirePackage{siunitx}
 \RequirePackage[us]{datetime}
 \RequirePackage[shortlabels,inline]{enumitem}
-    \setlist{leftmargin=*}
-    \setlist[enumerate]{{\bf A.}}
+  \setlist{leftmargin=*}
+  \setlist[enumerate]{{\bf A.}}
 
 % Fonts
 \RequirePackage[sc]{mathpazo} % Palatino with smallcaps
@@ -76,9 +77,9 @@
 \RequirePackage{bookmark}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	DOCUMENT STRUCTURE COMMANDS  %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT STRUCTURE COMMANDS  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Header and footer for when a page split occurs within a problem environment
 \newcommand{\enterProblemHeader}[1]{
@@ -117,7 +118,7 @@
 }
    
 \newenvironment{Answer}{
-    \subsubsection*{Answer}
+  \subsubsection*{Answer}
 }{}
 
 
@@ -126,8 +127,8 @@
 \posttitle{\par\end{center}\vskip 2in}
 
 \preauthor{\begin{center}
-           \Huge \usefont{OT1}{pzc}{m}{n} \lineskip 0.5em%
-           \begin{tabular}[t]{c}}
+       \Huge \usefont{OT1}{pzc}{m}{n} \lineskip 0.5em%
+       \begin{tabular}[t]{c}}
 \postauthor{\end{tabular}\par\end{center}}
 
 \author{Hui Sun}
