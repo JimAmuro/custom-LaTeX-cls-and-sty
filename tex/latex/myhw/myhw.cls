@@ -35,7 +35,6 @@
 
 \RequirePackage{titling}
 \RequirePackage{titlesec} %Define title formats
-  \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
 \RequirePackage{titletoc}
 
 % To deal with titlesec overwriting \thetitle ... Just a varible saves it.
@@ -47,7 +46,7 @@
   \pagestyle{fancy}
     \lhead{\emph{\theauthor}} % Top left header
     \chead{\textbf{\thistitle}} % Top center header
-    \rhead{\leftmark} % Top right header
+    \rhead{} % Top right header
     \lfoot{\lastxmark} % Bottom left footer
     \cfoot{} % Bottom center footer
     \rfoot{--\ \thepage\ --} % Bottom right footer
