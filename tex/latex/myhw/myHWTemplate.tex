@@ -1,10 +1,16 @@
 %!TEX options = --shell-escape %
 %Delete the trailing % to invoke shell-escape!
 \documentclass[titlepage,11pt]{myhw}
-% \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
-% \rhead{\leftmark} % Top right header: whether show problem number on rhead or not
 
-% Code Typesetting
+%%% Choose one mode by commenting out the other mode.
+%% Default: multiple problems on one page, no right header, problem titles are in runin shape.
+\titleformat{\section}[runin]{\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+%% Each problem starts on a new page, with problem name on the right header.
+% \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
+% \rhead{\leftmark} % Top right header
+
+%% Code Typesetting Settings
 % \usepackage{minted} 
   % \newminted{Scheme}{% Specify the language name by replacing Scheme 
   %     autogobble, 
