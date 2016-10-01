@@ -1,16 +1,22 @@
-%!TEX options = --shell-escape %
-%Delete the trailing % to invoke shell-escape!
-\documentclass[titlepage,11pt]{myhw}
+\documentclass{myhw}
+% \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-%%% Choose one mode by commenting out the other mode.
+%%% ==========Choose one mode by commenting out the other mode.======
+
 %% Default: multiple problems on one page, no right header, problem titles are in runin shape.
 \titleformat{\section}[runin]{\bfseries}{}{}{}[]
 \titleformat{\subsection}[runin]{\bfseries}{}{}{}[]
+
 %% Each problem starts on a new page, with problem name on the right header.
+% add titlepage to option
 % \newcommand{\sectionbreak}{\clearpage} % make new section begin a newpage
 % \rhead{\leftmark} % Top right header
 
-%% Code Typesetting Settings
+%% ===========enumitem settings===========
+  % \setlist{leftmargin=*}
+  % \setlist[enumerate]{{\bf A.}}
+
+%% ===========Code Typesetting Settings========
 % \usepackage{minted} 
   % \newminted{Scheme}{% Specify the language name by replacing Scheme 
   %     autogobble, 

@@ -25,19 +25,19 @@
 \RequirePackage{amsthm}
 \RequirePackage{braket}
 \RequirePackage{commath}
+\RequirePackage{xfrac}
 
 % Margin and Format
 \RequirePackage[margin=1in]{geometry}
 \headsep=0.25in 
 % \textwidth=6.5in
 % \textheight=9.0in
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \RequirePackage{titling}
 \RequirePackage{titlesec} %Define title formats
 \RequirePackage{titletoc}
 
-% To deal with titlesec overwriting \thetitle ... Just a varible saves it.
+% To deal with titlesec overwriting \thetitle ... Just use a variable to save it before overwrited.
 \let\oldtitle\title
 \renewcommand{\title}[1]{\oldtitle{#1}\newcommand{\thistitle}{#1}}
 
@@ -62,14 +62,12 @@
 \RequirePackage{siunitx}
 \RequirePackage[us]{datetime}
 \RequirePackage[shortlabels,inline]{enumitem}
-  \setlist{leftmargin=*}
-  \setlist[enumerate]{{\bf A.}}
+
 
 % Fonts
 \RequirePackage[sc]{mathpazo} % Palatino with smallcaps
 \RequirePackage[scaled]{helvet} % Helvetica, scaled 95%
 %\RequirePackage{eulervm} % Euler math, no italic, sometimes hard to distinguish from body font...
-%\RequirePackage{sourcecodepro} % TypeWriter: source code pro
 
 % PDF Functions
 \RequirePackage[pdftitle={Assignment},  pdfauthor={Hui Sun}]{hyperref}
@@ -79,6 +77,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT STRUCTURE COMMANDS  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\exname}{Problem} %Set the name of exercise to be Problem or Exercise or something else.
+\newcommand{\excounter}{\arabic{homeworkProblemCounter}}
+\newcommand{\subexcounter}{\alph{homeworkSectionCounter}.}
 
 % Header and footer for when a page split occurs within a problem environment
 \newcommand{\enterProblemHeader}[1]{
@@ -95,7 +96,7 @@
 \newcounter{homeworkSectionCounter} % a counter for sections in one problem, refresh when enter a new problem
 
 \newcommand{\homeworkProblemName}{}
-\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\newenvironment{homeworkProblem}[1][\exname \ \excounter]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
 \setcounter{homeworkSectionCounter}{0}
 \stepcounter{homeworkProblemCounter} % Increase counter for number of problems
 \renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
@@ -107,7 +108,7 @@
 
 
 \newcommand{\homeworkSectionName}{}
-\newenvironment{homeworkSection}[1][\Alph{homeworkSectionCounter}.]{ % New environment for sections within homework problems, takes 1 argument - the name of the section.
+\newenvironment{homeworkSection}[1][\subexcounter]{ % New environment for sections within homework problems, takes 1 argument - the name of the section.
 \stepcounter{homeworkSectionCounter}
 \renewcommand{\homeworkSectionName}{#1} % Assign \homeworkSectionName to the name of the section from the environment argument
 \subsection{\homeworkSectionName} % Make a subsection with the custom name of the subsection
@@ -115,11 +116,17 @@
 }{
 \enterProblemHeader{\homeworkProblemName} % Header and footer after the environment
 }
-   
-\newenvironment{Answer}{
-  \subsubsection*{Answer}
-}{}
 
+% Solution env, the same format as proof in amsthm
+\newenvironment{solution}{\par
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    Solution\@addpunct{.}]\ignorespaces
+}{%
+  \endtrivlist\@endpefalse
+}   
 
 %%% TITLE STYLE 
 \pretitle{\begin{center}\Huge \bfseries}
