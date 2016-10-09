@@ -23,7 +23,6 @@
 \RequirePackage{amssymb}
 \RequirePackage{bm} %bold math symbols for vectors and so on
 \RequirePackage{amsthm}
-\RequirePackage{braket}
 \RequirePackage{commath}
 
 % Margin and Format
@@ -74,7 +73,6 @@
 \RequirePackage[sc]{mathpazo} % Palatino with smallcaps
 \RequirePackage[scaled]{helvet} % Helvetica, scaled 95%
 %\RequirePackage{eulervm} % Euler math, no italic, sometimes hard to distinguish from body font...
-%\RequirePackage{sourcecodepro} % TypeWriter: source code pro
 
 %TITLE STYLE
 \pretitle{\begin{center}\LARGE \bfseries}

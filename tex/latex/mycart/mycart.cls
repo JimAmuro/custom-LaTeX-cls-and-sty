@@ -20,7 +20,6 @@
 \RequirePackage{amssymb}
 \RequirePackage{bm} %bold math symbols for vectors and so on
 \RequirePackage{amsthm}
-\RequirePackage{braket}
 \RequirePackage{commath}
 
 % Margin and Format
