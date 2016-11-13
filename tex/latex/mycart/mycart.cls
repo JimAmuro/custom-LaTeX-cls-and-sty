@@ -77,3 +77,7 @@
 \posttitle{\par\end{center}\vskip 0.5em}
 
 \author{孙晖}
+% date is so useless in title, delete it and its spacing by default!
+\predate{}
+\postdate{}
+\date{} %Omit the date by leave it blank, the spacing will also be omitted 

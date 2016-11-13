@@ -13,7 +13,6 @@
 
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
 \RequirePackage{microtype}
 
 %Math
@@ -67,6 +66,7 @@
 \RequirePackage[sc]{mathpazo} % Palatino with smallcaps
 \RequirePackage[scaled]{helvet} % Helvetica, scaled 95%
 %\RequirePackage{eulervm} % Euler math, no italic, sometimes hard to distinguish from body font...
+\RequirePackage[T1]{fontenc}
 
 % PDF Functions
 \RequirePackage[pdftitle={Assignment},  pdfauthor={Hui Sun}]{hyperref}
@@ -77,6 +77,7 @@
 % DOCUMENT STRUCTURE COMMANDS  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\exname}{Problem} %Set the name of exercise to be Problem or Exercise or something else.
+\newcommand{\solname}{Solution}
 \newcommand{\excounter}{\arabic{homeworkProblemCounter}}
 \newcommand{\subexcounter}{\alph{homeworkSectionCounter}.}
 
@@ -122,7 +123,7 @@
   \trivlist
   \item[\hskip\labelsep
         \itshape
-    Solution\@addpunct{.}]\ignorespaces
+    \solname\@addpunct{.}]\ignorespaces
 }{%
   \endtrivlist\@endpefalse
 }   
@@ -137,3 +138,8 @@
 \postauthor{\end{tabular}\par\end{center}}
 
 \author{Hui Sun}
+
+% date is so useless in title, delete it and its spacing by default!
+\predate{}
+\postdate{}
+\date{} %Omit the date by leave it blank, the spacing will also be omitted 

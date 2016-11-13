@@ -13,7 +13,6 @@
 
 \RequirePackage[l2tabu, orthodox]{nag}
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
 \RequirePackage{microtype}
 
 %Math
@@ -73,9 +72,15 @@
 \RequirePackage[sc]{mathpazo} % Palatino with smallcaps
 \RequirePackage[scaled]{helvet} % Helvetica, scaled 95%
 %\RequirePackage{eulervm} % Euler math, no italic, sometimes hard to distinguish from body font...
+\RequirePackage[T1]{fontenc}
 
 %TITLE STYLE
 \pretitle{\begin{center}\LARGE \bfseries}
 \posttitle{\par\end{center}\vskip 0.5em}
 
 \author{Hui Sun}
+
+% date is so useless in title, delete it and its spacing by default!
+\predate{}
+\postdate{}
+\date{} %Omit the date by leave it blank, the spacing will also be omitted 
