@@ -1,0 +1,79 @@
+\documentclass{myhw}
+\linespread{1.05}        % Palatino needs more leading (space between lines)
+\usepackage{extarrows}
+\usepackage{mathrsfs}
+\usepackage{braket}
+\titleformat{\section}[runin]{\sffamily\bfseries}{}{}{}[]
+\titleformat{\subsection}[runin]{\sffamily\bfseries}{}{}{}[]
+\renewcommand{\exname}{Exercise }
+\renewcommand{\subexcounter}{(\alph{homeworkSectionCounter})}
+\newcommand{\id}{\text{Id}}
+\newcommand{\tr}{\text{Tr}}
+\newcommand{\rib}{\text{Rib}}
+
+\title{Math 321 Homework 123}
+
+\begin{document}
+\begin{homeworkProblem}
+Extracting coefficients by inner product gives
+\begin{gather*}
+\braket{p_\lambda,m_\mu}=\braket{p_\lambda,\sum_\nu c_\nu p_\nu}=c_\lambda z_\lambda=z_\lambda [p_\lambda]m_\mu \\
+\braket{p_\lambda,m_\mu}=\braket{\sum_\nu d_\nu h_\nu, m_\mu}=d_\mu=[h_\mu]p_\lambda
+\end{gather*}
+Hence $[p_\lambda]m_\mu=\frac{1}{z_\lambda}[h_\mu]p_\lambda$.
+\end{homeworkProblem}
+\begin{homeworkProblem}
+\begin{homeworkSection}
+Representations of dimension 1 must be irreps. $\set{(S^\lambda, \rho_{reg})}_{\lambda \vdash n}$ are irreps of $S_n$ and $|\dim(S^\lambda)|=|SYT(\lambda)|$. For $n>1$, if $|SYT(\lambda)|=1$, it must be $1^n$ or $n$, i.e., only one direction to fill in the numbers $1 \ldots n$, otherwise there shall be more possibilities (or think it as filling the Young lattice, if more than one direction you can always choose which side to put the second box). The corresponding irreps are the trivial representation and the sign representation.
+\end{homeworkSection}
+\begin{homeworkSection}
+The irreps of $S_4$ corresponds to the partitions of 4, which are 4, 31, 22, 211, 1111, hence 5 irreps in total. Their respective dimensions are the respective number of possible SYTs, i.e., 1, 3, 2, 3, 1, respectively.
+\end{homeworkSection}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+\begin{homeworkSection}
+Since for any $\sigma \in S_n$ there is $b_\lambda \sigma a_\lambda = \set{\pm p_\lambda, 0}$, then for any $\pi \in S_n$ \[
+\phi_\lambda(\phi_\lambda(\pi))=\pi p_\lambda p_\lambda=\pi b_\lambda (a_\lambda b_\lambda) a_\lambda = \pi b_\lambda \sum _{\sigma \in S_n}c_\sigma \sigma a_\lambda = \pi \sum_{\sigma \in S_n}c_\sigma b_\lambda \sigma a_\lambda=\pi K_\lambda p_\lambda=K_\lambda \pi p_\lambda=K_\lambda \phi_\lambda(\pi)
+\] for some $K_\lambda \in \mathbb{C}$.
+Hence $\phi_\lambda \circ \phi_\lambda(\pi)=K_\lambda\phi_\lambda$.
+\end{homeworkSection}
+\begin{homeworkSection}
+Notice $A_\lambda \cap B_\lambda= \id$ since the only permutation which is both row stabilizer and column stabilizer is the identity permutation, and there is no inverse for $\alpha \in A_\lambda$ in $\beta \in B_\lambda$, hence $p_\lambda=a_\lambda b_\lambda=\id + \sum_{\pi \neq \id}c_\pi \pi$. Consider the matrix with all permutations as bases, then $\phi_\lambda(\pi)=\pi p_\lambda = \pi + \sum_{\sigma \neq \pi}d_\sigma \sigma$, which means there are 1's on the diagonal, hence $\tr(\phi_\lambda)=\dim(\mathbb{C}(S_n))=|S_n|=n!$. 
+\end{homeworkSection}
+\begin{homeworkSection}
+By the hint, since $\tr(\phi_\lambda)=\sum_{i \in [n!]} \lambda_i \neq 0$, there exists a non-zero eigenvalue. Since every operator has an upper-triangular matrix over $\mathbb{C}$, we can find the upper-triangular matrix $M$ for $\phi_\lambda$, which has its eigenvalues on the diagonal. Then the diagonal elements of $M^2$ should be the square of each eigenvalue, which means $\tr(\phi_\lambda^2)=\sum _{i \in [n!]} \lambda_i^2 >0$. Also, $\tr(\phi_\lambda^2)=\tr(K_\lambda \phi_\lambda)=K_\lambda \tr(\phi_\lambda)$. Hence $K_\lambda = \tr(\phi_\lambda^2)/\tr(\phi_\lambda) \neq 0$. 
+\end{homeworkSection}
+\begin{homeworkSection}
+By the hint, $\Psi_\lambda^2=\frac{1}{K_\lambda^2}\phi_\lambda^2=\frac{K_\lambda}{K_\lambda^2}\phi_\lambda=\Psi_\lambda$, hence it is projector which is the identity map on the image it projects to, hence its matrix should be a diagonal matrix with number of 1's equal to the dimension of its image and 0 as other diagonal elements. The image of $\Psi_\lambda$ is $\mathbb{C}[S_n]p_\lambda=S^\lambda$, hence $\tr(\Psi_\lambda)=\dim(S^\lambda)=|SYT(\lambda)|$. Also $\tr(\Psi_\lambda)=\tr(\frac{1}{K_\lambda}\phi_\lambda)= \frac{1}{K_\lambda}\tr(\phi_\lambda)$. Hence $|SYT(\lambda)|=\frac{1}{K_\lambda}n! \implies K_\lambda = \frac{n!}{|SYT(\lambda)}$.
+\end{homeworkSection}
+\end{homeworkProblem}
+\begin{homeworkProblem}
+Say the cycle type of $\pi$ is $\mu$, then
+\[
+  \chi_{\lambda'}(\pi)=\chi_{\lambda'}(\mu)=\braket{s_{\lambda'},p_\mu}=\braket{\omega(s_{\lambda'}), \omega(p_\mu)}=\braket{s_\lambda, \varepsilon_\mu p_\mu}=\varepsilon_\mu \braket{s_\lambda,p_\mu}=\varepsilon_\mu\chi_\lambda(\mu)=\varepsilon_\pi\chi_\lambda(\pi).
+\]
+
+Also, we can use Murnaghan-Nakayama rule to give a combinatorial proof, i.e., to prove $\rib_{\lambda'}(\mu)=\varepsilon_\mu\rib_\lambda(\mu)$. Notice there is a bijection between the ribbon tableaux of $\lambda$ and $\lambda'$ by conjugate. For each ribbon $R$, since it can be projected to a hook diagram, $size(R) + 1 = \#row + \#column = height(R)+1 + height(R')+1$. Then for each ribbon tableau $T$ of shape $\lambda$ weight $\mu$, \[
+  n-length(\mu)-height(T)=\sum_{i \leq length(\mu)}\mu_i-1-height(R_i)=\sum_{i \leq length(\mu)}height(R_i')=height(T').
+\] Hence \[
+  \varepsilon_\mu\rib_\lambda(\mu)=(-1)^{n-length(\mu)}\sum_T (-1)^{-height(T)}=\sum_T(-1)^{n-length(\mu)-height(T)}=\sum_T (-1)^{height(T')}=\rib_{\lambda'}(\mu).
+\]
+\end{homeworkProblem}
+\begin{homeworkProblem}
+\begin{homeworkSection}
+For $n \geq \ell$, $s_\lambda(x_1, \ldots, x_n)=\frac{a_{\lambda+\delta}}{a_\delta}$. Let $x_i=q^{i-1}$, then $a_\delta=\det(x_j^{n-i})_{i,j \in [n]}=\prod_{1 \leq i<j \leq n}(x_i-x_j)=\prod_{1 \leq i<j \leq n}(q^{i-1}-q^{j-1})$. Notice $a_{\lambda+\delta}=\det(x_j^{\lambda_i+n-i})=\det((q^{j-1})^{\lambda_i+n-i})=\det((q^{\lambda_i+n-i})^{j-1})=\prod_{1 \leq i<j \leq n}(q^{\lambda_j+n-j} - q^{\lambda_i+n-i})$ by the expression of Vandermonde determinant. Hence \[
+  s_\lambda(1,q,\ldots,q^{n-1})=\prod_{1 \leq i<j \leq n}\frac{q^{\lambda_j+n-j} - q^{\lambda_i+n-i}}{q^{i-1}-q^{j-1}}.
+\]
+\end{homeworkSection}
+\begin{homeworkSection}
+By the definition of Schur function, $s_\lambda=\sum _{T \in SSYT(\lambda)} x ^{w(T)}$, then $s_\lambda(1^n)=\sum_{\stackrel{T \in SSYT(\lambda)}{length(w(T)) \leq n}} 1$, which is the number of SSYT of shape $\lambda$ with all entries no larger than $n$.
+
+Notice \[
+  s_\lambda(1,q,\ldots,q^{n-1})=\prod_{1 \leq i<j \leq n}\frac{q^{\lambda_j+n-j} - q^{\lambda_i+n-i}}{q^{i-1}-q^{j-1}}=\prod_{1 \leq i<j \leq n} \frac{q^{\lambda_j+n-j}(1-q^{\lambda_i- \lambda_j+j-i})}{q^{i-1}(1-q^{j-i})},
+\]
+since $1-q^n=(1-q)(1+q+\ldots+q^{n-1})$, $1-q$ is canceled out in the fraction, Now let $q=1$, then \[
+  s_\lambda(1^n)=\prod_{1 \leq i<j \leq n}\frac{\lambda_i- \lambda_j+j-i}{j-i}.
+\]
+\end{homeworkSection}
+\end{homeworkProblem}
+\end{document}

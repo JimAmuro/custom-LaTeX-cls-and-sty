@@ -58,7 +58,7 @@
 \RequirePackage{xcolor} % Required for custom colors
 \RequirePackage{booktabs} % Required for beautiful tables
 \RequirePackage{siunitx}
-\RequirePackage[us]{datetime}
+\RequirePackage[en-US]{datetime2}
 \RequirePackage[shortlabels,inline]{enumitem}
 
 
@@ -76,7 +76,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DOCUMENT STRUCTURE COMMANDS  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\exname}{Problem} %Set the name of exercise to be Problem or Exercise or something else.
+\newcommand{\exname}{Problem\ } %Set the name of exercise to be Problem or Exercise or something else.
 \newcommand{\solname}{Solution}
 \newcommand{\excounter}{\arabic{homeworkProblemCounter}}
 \newcommand{\subexcounter}{\alph{homeworkSectionCounter}.}
@@ -96,7 +96,7 @@
 \newcounter{homeworkSectionCounter} % a counter for sections in one problem, refresh when enter a new problem
 
 \newcommand{\homeworkProblemName}{}
-\newenvironment{homeworkProblem}[1][\exname \ \excounter]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
+\newenvironment{homeworkProblem}[1][\exname\excounter]{ % Makes a new environment called homeworkProblem which takes 1 argument (custom name) but the default is "Problem #"
 \setcounter{homeworkSectionCounter}{0}
 \stepcounter{homeworkProblemCounter} % Increase counter for number of problems
 \renewcommand{\homeworkProblemName}{#1} % Assign \homeworkProblemName the name of the problem
